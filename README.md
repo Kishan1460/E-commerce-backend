@@ -156,11 +156,6 @@ Log levels: `error`, `warn`, `info`, `http`, `debug`
    - `NODE_ENV` = production
 5. Render auto-deploys on every GitHub push ✅
 
-### Option 2: Vercel
-1. Install Vercel CLI: `npm i -g vercel`
-2. Run `vercel` in project root
-3. Set `MONGODB_URI` in Vercel dashboard → Environment Variables
-4. Re-deploy: `vercel --prod`
 
 ### MongoDB Atlas (Cloud DB)
 1. Create free cluster at [cloud.mongodb.com](https://cloud.mongodb.com)
@@ -188,4 +183,4 @@ Log levels: `error`, `warn`, `info`, `http`, `debug`
 - **Logging**: Winston + Morgan
 - **API Docs**: Swagger (swagger-jsdoc + swagger-ui-express)
 - **Testing**: Jest + Supertest
-- **Hosting**: Render / Vercel + MongoDB Atlas
+- **Hosting**: Render
