@@ -1,7 +1,7 @@
-require("dotenv").config();
-const mongoose = require("mongoose");
-const Product = require("../src/models/Product");
-const logger = require("../src/config/logger");
+import "dotenv/config";
+import mongoose from "mongoose";
+import Product from "../src/models/Product.js";
+import logger from "../src/config/logger.js";
 
 const products = [
   { name: "Wireless Noise-Cancelling Headphones", price: 2999, category: "electronics", image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400", description: "Premium over-ear headphones with 30hr battery.", rating: 4.5, stock: 25 },

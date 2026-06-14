@@ -1,6 +1,7 @@
-const express = require("express");
+import express from "express";
+import { addToCart, getCart, removeFromCart } from "../controllers/cartController.js";
 const router = express.Router();
-const { addToCart, getCart, removeFromCart } = require("../controllers/cartController");
+
 
 /**
  * @swagger
@@ -103,4 +104,4 @@ router.post("/", addToCart);
  */
 router.delete("/:id", removeFromCart);
 
-module.exports = router;
+export default router;

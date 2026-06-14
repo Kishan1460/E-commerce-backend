@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const logger = require("./logger");
+import mongoose from "mongoose";
+import logger from "./logger.js";
 
 const connectDB = async () => {
   try {
@@ -7,9 +7,9 @@ const connectDB = async () => {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    logger.info(`✅ MongoDB Connected: ${conn.connection.host}`);
+    logger.info(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
-    logger.error(`❌ MongoDB Connection Error: ${error.message}`);
+    logger.error(`MongoDB Connection Error: ${error.message}`);
     process.exit(1);
   }
 };
@@ -19,7 +19,7 @@ mongoose.connection.on("disconnected", () => {
 });
 
 mongoose.connection.on("reconnected", () => {
-  logger.info("✅ MongoDB reconnected successfully.");
+  logger.info("MongoDB reconnected successfully.");
 });
 
-module.exports = connectDB;
+export default connectDB;

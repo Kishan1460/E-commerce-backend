@@ -1,9 +1,11 @@
-const request = require("supertest");
-const mongoose = require("mongoose");
-const app = require("../src/app");
-const Product = require("../src/models/Product");
-const Cart = require("../src/models/Cart");
-const Favourite = require("../src/models/Favourite");
+import request from "supertest";
+import mongoose from "mongoose";
+import app from "../src/app.js";
+import Product from "../src/models/Product.js";
+import Cart from "../src/models/Cart.js";
+import Favourite from "../src/models/Favourite.js";
+
+
 
 // Use in-memory test DB (set MONGODB_URI to a test cluster in .env.test)
 beforeAll(async () => {

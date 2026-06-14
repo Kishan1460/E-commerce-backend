@@ -1,5 +1,5 @@
-const Product = require("../models/Product");
-const logger = require("../config/logger");
+import Product from "../models/Product.js";
+import logger from "../config/logger.js";
 
 // GET /products - Return all products
 const getAllProducts = async (req, res) => {
@@ -38,4 +38,4 @@ const getProductsByCategory = async (req, res) => {
   }
 };
 
-module.exports = { getAllProducts, getProductsByCategory };
+export { getAllProducts, getProductsByCategory };

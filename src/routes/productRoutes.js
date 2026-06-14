@@ -1,6 +1,6 @@
-const express = require("express");
+import express from "express";
+import { getAllProducts, getProductsByCategory } from "../controllers/productController.js";
 const router = express.Router();
-const { getAllProducts, getProductsByCategory } = require("../controllers/productController");
 
 /**
  * @swagger
@@ -83,4 +83,4 @@ router.get("/", getAllProducts);
  */
 router.get("/:category", getProductsByCategory);
 
-module.exports = router;
+export default router;

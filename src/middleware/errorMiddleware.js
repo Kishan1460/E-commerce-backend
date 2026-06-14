@@ -1,4 +1,4 @@
-const logger = require("../config/logger");
+import logger from "../config/logger.js";
 
 // 404 - Route Not Found
 const notFound = (req, res, next) => {
@@ -17,4 +17,4 @@ const errorHandler = (err, req, res, next) => {
   });
 };
 
-module.exports = { notFound, errorHandler };
+export  { notFound, errorHandler };

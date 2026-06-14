@@ -1,6 +1,6 @@
-const express = require("express");
+import express from "express";
+import { addToFavourites, getFavourites, removeFromFavourites } from "../controllers/favouriteController.js";
 const router = express.Router();
-const { addToFavourites, getFavourites, removeFromFavourites } = require("../controllers/favouriteController");
 
 /**
  * @swagger
@@ -99,4 +99,4 @@ router.post("/", addToFavourites);
  */
 router.delete("/:id", removeFromFavourites);
 
-module.exports = router;
+export default router;

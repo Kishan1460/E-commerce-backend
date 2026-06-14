@@ -1,14 +1,13 @@
-const express = require("express");
-const cors = require("cors");
-const morgan = require("morgan");
-const swaggerUi = require("swagger-ui-express");
-const swaggerSpec = require("./config/swagger");
-const logger = require("./config/logger");
-
-const productRoutes = require("./routes/productRoutes");
-const cartRoutes = require("./routes/cartRoutes");
-const favouriteRoutes = require("./routes/favouriteRoutes");
-const { notFound, errorHandler } = require("./middleware/errorMiddleware");
+import express from "express";
+import cors from "cors";
+import morgan from "morgan";
+import swaggerUi from "swagger-ui-express";
+import swaggerSpec from "./config/swagger.js";
+import logger from "./config/logger.js";
+import productRoutes from "./routes/productRoutes.js";
+import cartRoutes from "./routes/cartRoutes.js";
+import favouriteRoutes from "./routes/favouriteRoutes.js";
+import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 
 const app = express();
 
@@ -57,4 +56,4 @@ app.use("/api/favorites", favouriteRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
-module.exports = app;
+export default app;

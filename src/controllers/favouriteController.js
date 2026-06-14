@@ -1,7 +1,6 @@
-const Favourite = require("../models/Favourite");
-const Product = require("../models/Product");
-const logger = require("../config/logger");
-
+import Favourite from "../models/Favourite.js";
+import Product from "../models/Product.js";
+import logger from "../config/logger.js";
 // POST /api/favorites - Add product to favourites
 const addToFavourites = async (req, res) => {
   try {
@@ -39,7 +38,7 @@ const addToFavourites = async (req, res) => {
       category: product.category,
     });
 
-    logger.info(`✅ Product "${product.name}" added to favourites successfully.`);
+    logger.info(`Product "${product.name}" added to favourites successfully.`);
     res.status(201).json({
       success: true,
       message: `"${product.name}" added to favourites!`,
@@ -82,4 +81,4 @@ const removeFromFavourites = async (req, res) => {
   }
 };
 
-module.exports = { addToFavourites, getFavourites, removeFromFavourites };
+export { addToFavourites, getFavourites, removeFromFavourites };

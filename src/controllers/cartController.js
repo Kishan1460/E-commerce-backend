@@ -1,6 +1,6 @@
-const Cart = require("../models/Cart");
-const Product = require("../models/Product");
-const logger = require("../config/logger");
+import Cart from "../models/Cart.js";
+import Product from "../models/Product.js";
+import logger from "../config/logger.js";
 
 // POST /api/cart - Add product to cart
 const addToCart = async (req, res) => {
@@ -12,7 +12,7 @@ const addToCart = async (req, res) => {
       return res.status(400).json({ success: false, message: "productId is required." });
     }
 
-    logger.info(`🛒 Adding product [${productId}] to cart...`);
+    logger.info(`Adding product [${productId}] to cart...`);
 
     // Validate the product exists in DB
     const product = await Product.findById(productId);
@@ -58,7 +58,7 @@ const addToCart = async (req, res) => {
 // GET /cart - Get all cart items
 const getCart = async (req, res) => {
   try {
-    logger.info("🛒 Fetching all cart items...");
+    logger.info("Fetching all cart items...");
     const cartItems = await Cart.find().sort({ addedAt: -1 });
     logger.info(`Fetched ${cartItems.length} item(s) from cart.`);
     res.status(200).json({ success: true, count: cartItems.length, data: cartItems });
@@ -86,4 +86,4 @@ const removeFromCart = async (req, res) => {
   }
 };
 
-module.exports = { addToCart, getCart, removeFromCart };
+export { addToCart, getCart, removeFromCart };
