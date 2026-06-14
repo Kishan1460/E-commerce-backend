@@ -11,13 +11,9 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:3000",
-        description: "Development server",
-      },
-      {
-        url: "https://your-app.render.com",
-        description: "Production server",
-      },
+        url: process.env.SERVER_URL || "http://localhost:3000",  
+        description: process.env.NODE_ENV === "production" ? "Production server" : "Development server",
+      }
     ],
     tags: [
       { name: "Products", description: "Product listing and category filtering" },
