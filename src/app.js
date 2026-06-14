@@ -31,10 +31,10 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
 
 // ─── Health Check ──────────────────────────────────────────────────────────────
 app.get("/", (req, res) => {
-  logger.info("🏠 Health check endpoint hit.");
+  logger.info("Health check endpoint hit.");
   res.status(200).json({
     success: true,
-    message: "🛒 Ecommerce Website API is running!",
+    message: "Ecommerce Website API is running!",
     docs: "/api-docs",
     version: "1.0.0",
   });

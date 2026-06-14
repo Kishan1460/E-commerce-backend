@@ -1,4 +1,4 @@
-import "dotenv/config";         // dotenv works differently in ES6
+import "dotenv/config";        
 import app from "./app.js";
 import connectDB from "./config/db.js";
 import logger from "./config/logger.js";
@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 const startServer = async () => {
   try {
     // 1. Connect to MongoDB
-    logger.info("🔌 Connecting to MongoDB...");
+    logger.info(" Connecting to MongoDB...");
     await connectDB();
 
     // 2. Start Express server
