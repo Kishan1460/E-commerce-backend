@@ -5,7 +5,7 @@ Includes REST APIs for products, cart, and favourites, with Swagger docs, Winsto
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 ecommerce-backend/
@@ -43,7 +43,7 @@ ecommerce-backend/
 
 ---
 
-## ⚙️ Local Setup
+##  Local Setup
 
 ### 1. Clone & Install
 ```bash
@@ -53,10 +53,6 @@ npm install
 ```
 
 ### 2. Configure Environment
-```bash
-cp .env.example .env
-# Edit .env and set your MONGODB_URI
-```
 
 ```env
 PORT=3000
@@ -77,7 +73,7 @@ npm start       # production mode
 
 ---
 
-## 📡 API Endpoints
+##  API Endpoints
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
@@ -89,7 +85,7 @@ npm start       # production mode
 | POST | `/api/favorites` | Add product to favourites |
 | GET | `/favorites` | Get all favourite items |
 | DELETE | `/api/favorites/:id` | Remove item from favourites |
-| GET | `/api-docs` | 📚 Swagger UI Documentation |
+| GET | `/api-docs` |  Swagger UI Documentation |
 
 ### Example: Add to Cart
 ```bash
@@ -109,7 +105,7 @@ curl -X POST http://localhost:3000/api/cart \
 
 ---
 
-## 📚 API Documentation (Swagger)
+##  API Documentation (Swagger)
 
 Visit **`http://localhost:3000/api-docs`** after starting the server.
 
@@ -117,7 +113,7 @@ The Swagger UI provides interactive documentation for all endpoints — you can 
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 ```bash
 npm test
@@ -134,7 +130,7 @@ Tests use **Jest + Supertest** and cover:
 
 ---
 
-## 📋 Logging
+##  Logging
 
 Uses **Winston** for structured logging with:
 - `logs/error.log` — error-level logs only
@@ -145,9 +141,9 @@ Log levels: `error`, `warn`, `info`, `http`, `debug`
 
 ---
 
-## 🌐 Deployment
+##  Deployment
 
-### Option 1: Render.com (Recommended)
+### Using Render.com
 1. Push code to GitHub
 2. Go to [render.com](https://render.com) → New Web Service
 3. Connect your GitHub repo
@@ -164,7 +160,7 @@ Log levels: `error`, `warn`, `info`, `http`, `debug`
 
 ---
 
-## 🔧 Scripts
+##  Scripts
 
 | Command | Description |
 |---------|-------------|
@@ -175,7 +171,7 @@ Log levels: `error`, `warn`, `info`, `http`, `debug`
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Runtime**: Node.js
 - **Framework**: Express.js

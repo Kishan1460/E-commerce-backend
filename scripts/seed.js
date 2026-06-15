@@ -21,17 +21,17 @@ const products = [
 const seedDB = async () => {
   try {
     await mongoose.connect(process.env.MONGODB_URI);
-    logger.info("✅ Connected to MongoDB for seeding.");
+    logger.info("Connected to MongoDB for seeding.");
 
     await Product.deleteMany();
-    logger.info("🗑️  Cleared existing products.");
+    logger.info("Cleared existing products.");
 
     await Product.insertMany(products);
-    logger.info(`🌱 Successfully seeded ${products.length} products.`);
+    logger.info(`Successfully seeded ${products.length} products.`);
 
     process.exit(0);
   } catch (err) {
-    logger.error(`❌ Seeding failed: ${err.message}`);
+    logger.error(`Seeding failed: ${err.message}`);
     process.exit(1);
   }
 };
