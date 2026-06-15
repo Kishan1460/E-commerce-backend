@@ -99,30 +99,30 @@ describe("Favourites API", () => {
     await Favourite.deleteMany();
   });
 
-  it("POST /api/favourites - should add a product to favourites", async () => {
+  it("POST /api/favorites - should add a product to favourites", async () => {
     const res = await request(app)
-      .post("/api/favourites")
+      .post("/api/favorites")
       .send({ productId: testProductId });
     expect(res.statusCode).toBe(201);
     expect(res.body.success).toBe(true);
     expect(res.body.data.productId).toBe(testProductId);
   });
 
-  it("POST /api/favourites - should not duplicate favourites", async () => {
+  it("POST /api/favorites - should not duplicate favourites", async () => {
     const res = await request(app)
-      .post("/api/favourites")
+      .post("/api/favorites")
       .send({ productId: testProductId });
     expect(res.statusCode).toBe(200);
     expect(res.body.message).toMatch(/already in your favourites/i);
   });
 
-  it("POST /api/favourites - should return 400 without productId", async () => {
-    const res = await request(app).post("/api/favourites").send({});
+  it("POST /api/favorites - should return 400 without productId", async () => {
+    const res = await request(app).post("/api/favorites").send({});
     expect(res.statusCode).toBe(400);
   });
 
-  it("GET /favourites - should return all favourites", async () => {
-    const res = await request(app).get("/favourites");
+  it("GET /favorites - should return all favourites", async () => {
+    const res = await request(app).get("/favorites");
     expect(res.statusCode).toBe(200);
     expect(Array.isArray(res.body.data)).toBe(true);
   });
