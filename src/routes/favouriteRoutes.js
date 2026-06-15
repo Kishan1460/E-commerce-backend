@@ -34,7 +34,7 @@ router.get("/", getFavourites);
 
 /**
  * @swagger
- * /api/favorites:
+ * /api/favourites:
  *   post:
  *     summary: Add a product to favourites
  *     tags: [Favourites]
@@ -78,7 +78,7 @@ router.post("/", addToFavourites);
 
 /**
  * @swagger
- * /api/favorites/{id}:
+ * /api/favourites/{id}:
  *   delete:
  *     summary: Remove a product from favourites
  *     tags: [Favourites]
