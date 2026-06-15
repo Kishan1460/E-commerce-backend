@@ -11,7 +11,7 @@ import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 
 const app = express();
 
-// ─── Middleware ────────────────────────────────────────────────────────────────
+// Middleware
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -23,13 +23,13 @@ app.use(
   })
 );
 
-// ─── API Documentation ─────────────────────────────────────────────────────────
+// API Documentation 
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
   customSiteTitle: "Ecommerce API Docs",
   customCss: ".swagger-ui .topbar { background-color: #1a1a2e; }",
 }));
 
-// ─── Health Check ──────────────────────────────────────────────────────────────
+// Health Check
 app.get("/", (req, res) => {
   logger.info("Health check endpoint hit.");
   res.status(200).json({
@@ -40,7 +40,6 @@ app.get("/", (req, res) => {
   });
 });
 
-// ─── Routes ───────────────────────────────────────────────────────────────────
 // Products
 app.use("/products", productRoutes);
 
@@ -52,7 +51,7 @@ app.use("/api/cart", cartRoutes);
 app.use("/favourites", favouriteRoutes);
 app.use("/api/favourites", favouriteRoutes);
 
-// ─── Error Handling ───────────────────────────────────────────────────────────
+// Error Handling 
 app.use(notFound);
 app.use(errorHandler);
 

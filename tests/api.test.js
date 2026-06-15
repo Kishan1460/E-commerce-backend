@@ -19,7 +19,7 @@ afterAll(async () => {
 
 let testProductId;
 
-// ─── Products ─────────────────────────────────────────────────────────────────
+// Products 
 describe("GET /products", () => {
   beforeAll(async () => {
     const product = await Product.create({
@@ -57,7 +57,7 @@ describe("GET /products", () => {
   });
 });
 
-// ─── Cart ─────────────────────────────────────────────────────────────────────
+// Cart
 describe("Cart API", () => {
   afterAll(async () => {
     await Cart.deleteMany();
@@ -93,7 +93,7 @@ describe("Cart API", () => {
   });
 });
 
-// ─── Favourites ───────────────────────────────────────────────────────────────
+// Favourites
 describe("Favourites API", () => {
   afterAll(async () => {
     await Favourite.deleteMany();
@@ -128,7 +128,7 @@ describe("Favourites API", () => {
   });
 });
 
-// ─── Health Check ─────────────────────────────────────────────────────────────
+// Health Check
 describe("Health Check", () => {
   it("GET / - should return API info", async () => {
     const res = await request(app).get("/");

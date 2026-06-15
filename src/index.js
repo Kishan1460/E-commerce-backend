@@ -25,12 +25,7 @@ const startServer = async () => {
 
 // Graceful shutdown
 process.on("SIGINT", () => {
-  logger.info("Server shutting down gracefully (SIGINT received)...");
-  process.exit(0);
-});
-
-process.on("SIGTERM", () => {
-  logger.info("Server shutting down gracefully (SIGTERM received)...");
+  logger.info("Server shutting down.");
   process.exit(0);
 });
 
