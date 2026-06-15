@@ -1,4 +1,4 @@
-# 🛒 Ecommerce Website — Backend (Module 4)
+#  Ecommerce Website — Backend (Module 4)
 
 A complete **Node.js + Express + MongoDB** backend for the Ecommerce Website project.  
 Includes REST APIs for products, cart, and favourites, with Swagger docs, Winston logging, and Jest tests.
@@ -15,7 +15,7 @@ ecommerce-backend/
 │   ├── config/
 │   │   ├── db.js                # MongoDB connection
 │   │   ├── logger.js            # Winston logger setup
-│   │   └── swagger.js           # Swagger/OpenAPI config
+│   │   └── swagger.js           # Swagger config
 │   ├── models/
 │   │   ├── Product.js           # Product schema
 │   │   ├── Cart.js              # Cart schema
@@ -37,7 +37,6 @@ ecommerce-backend/
 ├── .env.example
 ├── .gitignore
 ├── render.yaml                  # Render.com deployment config
-├── vercel.json                  # Vercel deployment config
 └── package.json
 ```
 
@@ -47,7 +46,7 @@ ecommerce-backend/
 
 ### 1. Clone & Install
 ```bash
-git clone https://github.com/<your-username>/ecommerce-backend.git
+git clone https://github.com/Kishan1460/E-commerce-backend
 cd ecommerce-backend
 npm install
 ```
@@ -126,7 +125,6 @@ Tests use **Jest + Supertest** and cover:
 - GET cart items
 - POST to favourites (success, duplicate, missing productId)
 - GET favourites
-- Health check & 404 handler
 
 ---
 
@@ -150,13 +148,8 @@ Log levels: `error`, `warn`, `info`, `http`, `debug`
 4. Set environment variables in the Render dashboard:
    - `MONGODB_URI` = your Atlas connection string
    - `NODE_ENV` = production
-5. Render auto-deploys on every GitHub push ✅
+5. Render auto-deploys on every GitHub push 
 
-
-### MongoDB Atlas (Cloud DB)
-1. Create free cluster at [cloud.mongodb.com](https://cloud.mongodb.com)
-2. Add IP `0.0.0.0/0` to Network Access (allow all for hosting)
-3. Create DB user and copy the connection string into your `.env`
 
 ---
 
