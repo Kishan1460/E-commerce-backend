@@ -49,7 +49,7 @@ app.use("/api/cart", cartRoutes);
 
 // Favorites - GET via /favorites, POST/DELETE via /api/favorites
 app.use("/favorites", favouriteRoutes);
-app.use("/api/favorites", favouriteRoutes);
+app.use("/api/favorites", favoriteRoutes);
 
 // Error Handling 
 app.use(notFound);
