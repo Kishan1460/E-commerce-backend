@@ -6,7 +6,7 @@ import swaggerSpec from "./config/swagger.js";
 import logger from "./config/logger.js";
 import productRoutes from "./routes/productRoutes.js";
 import cartRoutes from "./routes/cartRoutes.js";
-import favouriteRoutes from "./routes/favouriteRoutes.js";
+import favoriteRoutes from "./routes/favouriteRoutes.js";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 
 const app = express();
@@ -48,7 +48,7 @@ app.use("/cart", cartRoutes);
 app.use("/api/cart", cartRoutes);
 
 // Favorites - GET via /favorites, POST/DELETE via /api/favorites
-app.use("/favorites", favouriteRoutes);
+app.use("/favorites", favoriteRoutes);
 app.use("/api/favorites", favoriteRoutes);
 
 // Error Handling 
